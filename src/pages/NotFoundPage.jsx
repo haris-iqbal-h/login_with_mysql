@@ -9,8 +9,8 @@ const NotFoundPage = () => {
                 alt='Error'
                 style={{
                     backgroundPosition:'center',
-                    height:'100vh',
-                    width:'100vw',
+                    height:'cover',
+                    width:'100%',
                     backgroundRepeat:'no-repeat',
                     backgroundSize:'cover'
                 }}
