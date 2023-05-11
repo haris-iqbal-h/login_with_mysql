@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "./Login.css";
-import axios from "axios";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -22,29 +20,6 @@ const Login = () => {
 
   const handleSubmit = async (values, setSubmitting) => {
     console.log("values : ", values);
-
-    try {
-      const {
-        data: { user, token },
-      } = await axios.post("http://localhost:3001/api/v1/user/loginuser", {
-        ...values,
-      });
-      localStorage.setItem("userdata", JSON.stringify(user));
-      localStorage.setItem("auth_token", token);
-      JSON.parse(localStorage.getItem("userdata"));
-      navigate("/");
-    } catch (err) {
-      alert(err.response.data.message);
-    }
-    console.log("login form values", values);
-    let error = validate();
-
-    if (error.email || error.password) {
-      setError(error);
-    } else {
-      setError({ ...error });
-      console.log("error : ", values);
-    }
   };
 
   const validate = (values) => {

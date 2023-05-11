@@ -1,7 +1,5 @@
 import React from "react";
-import "./Login.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { Formik } from "formik";
 import * as yup from "yup";
 const Signup = () => {
@@ -49,19 +47,6 @@ const Signup = () => {
 
   const handleSubmit = async (values, setSubmitting) => {
     console.log("values", values);
-    setSubmitting(false);
-    try {
-      const res = await axios.post(
-        "http://localhost:3001/api/v1/user/registeruser",
-        {
-          ...values,
-        }
-      );
-      console.log(res);
-      navigate("/login");
-    } catch (err) {
-      console.log("failed to register", err);
-    }
   };
 
   return (

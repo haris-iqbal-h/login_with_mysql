@@ -1,7 +1,7 @@
 import React from 'react'
-import Home from './pages/Home'
+import Login from './pages/Login'
 import NotFoundPage from './pages/NotFoundPage'
-import Search from './pages/Search'
+import Signup from './pages/Signup'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 
 const App = () => {
@@ -9,8 +9,10 @@ const App = () => {
         <>
             <Router>
                 <Routes>
-                    <Route path='/' element={<Home/>}/>
-                    <Route path='/search/:id' element={<Search/>}/>
+                    {/* <Route path='/' element={<Home/>}/> */}
+                    <Route path='/' element={<Login/>}/>
+                    <Route path='/signup' element={<Signup />}/>
+                    {/* <Route path='/search/:id' element={<Search/>}/> */}
                     <Route path='*' element={<NotFoundPage/>}/>
                 </Routes>
             </Router>
