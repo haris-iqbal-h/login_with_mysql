@@ -9,10 +9,8 @@ const App = () => {
         <>
             <Router>
                 <Routes>
-                    {/* <Route path='/' element={<Home/>}/> */}
                     <Route path='/' element={<Login/>}/>
                     <Route path='/signup' element={<Signup />}/>
-                    {/* <Route path='/search/:id' element={<Search/>}/> */}
                     <Route path='*' element={<NotFoundPage/>}/>
                 </Routes>
             </Router>
